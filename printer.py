@@ -20,5 +20,5 @@ def print_data(line_number: int, data: str):
 def print_dict_with_pair_info(line_number: int, data: str):
     line_as_dict = json.loads(data)
     line_as_dict['pair'] = True if line_number % 2 == 0 else False
-    print_new_data(line_number, json.dumps(line_as_dict))
+    print_new_data(line_number, json.dumps(line_as_dict, ensure_ascii=False).encode('utf8').decode())
 

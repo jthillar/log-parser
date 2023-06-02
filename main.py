@@ -17,8 +17,8 @@ def check_one_file_as_argument(args: list):
         raise RuntimeError("File doesn't exist")
 
 
-def parse_file(filepath: str):
-    with open(filepath, 'r') as file:
+def parser_printer(filepath: str):
+    with open(filepath, 'r', encoding="utf-8") as file:
         for line_number, data in enumerate(file):
 
             data = re.sub(r'\n|\r', '', data)
@@ -41,4 +41,4 @@ def parse_file(filepath: str):
 
 if __name__ == "__main__":
     check_one_file_as_argument(sys.argv)
-    parse_file(sys.argv[1])
+    parser_printer(sys.argv[1])
