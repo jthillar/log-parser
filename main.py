@@ -2,8 +2,8 @@ import os
 import re
 import sys
 
-import check
-import printer
+from src import check
+from src import printer
 
 
 def check_one_file_as_argument(args: list):

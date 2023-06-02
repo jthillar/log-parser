@@ -1,5 +1,5 @@
 import unittest
-import check
+from src import check
 
 
 class TestLineCheck(unittest.TestCase):

@@ -1,4 +1,5 @@
 import io
+import os.path
 import unittest
 from unittest import mock
 
@@ -29,7 +30,7 @@ class TestArgument(unittest.TestCase):
 
     @mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_parser_printer(self, mock_stdout):
-        main.parser_printer('data/data.log')
+        main.parser_printer(os.path.join(os.path.dirname(__file__), 'data/data.log'))
         expected_result = """0 : Multiple de 5
             1 : {"player": {"first_name": "Sergio", "last_name": "Ramos", "Age": 34}, "team": "Real Madrid", "pair": false}
             2 : {"player": {"first_name": "Kylian", "last_name": "Mbappé", "Age": 22}, "team": "PSG", "pair": true}

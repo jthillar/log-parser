@@ -1,7 +1,8 @@
 import io
 import unittest
 from unittest import mock
-import printer
+
+from src import printer
 
 
 class PrinterTest(unittest.TestCase):
